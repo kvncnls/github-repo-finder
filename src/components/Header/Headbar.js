@@ -1,10 +1,25 @@
 import React from 'react'
 import styled from "styled-components";
+import Form from "../Forms/Form";
+
+/* Nice to have:
+onscroll trigger state to display {profile.url} and profile.name in the headbar 
+ Nice to have 
+ 
 
 
-export default function Headbar() {
+
+*/
+
+
+
+
+
+export default function Headbar({HandleSubmit, HandleChange, data}) {
     return (
         <Head>
+        
+        <Form HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {data}/> 
 
   
             

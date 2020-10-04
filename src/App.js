@@ -1,87 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React, {   useState} from 'react';
 import styled from "styled-components";
 import GlobalStyle from "./styles/GlobalStyles";
-
+import Axios from 'axios'
 import Headbar from "./components/Header/Headbar";
 import Footer from "./components/Footer/Footer";
+import Repos from "./components/Repositories/Repos"
+import UserProfile from "./components/User/UserProfile";
+  
 
 
 function App() {
+
+  const [userData, SetUserData] = useState([]);
+  const [repos, setRepos] = useState([]);
   const [query, setQuery] = useState("");
-const url = `https://api.github.com/${query}/repos`;
 
-//const [repos, setRepos] = useState([]);
-
-// can't call it within a function. why? 
- function getData(){
-
-// make the http request and run it on submit. 
-
-
- };
-
-
-
-
+const userUrl = `https://api.github.com/users/${query}`;
+const repoUrl = `https://api.github.com/users/${query}/repos`;
 
 
 const HandleChange = (event) => {
-  // 
-setQuery(event.target.value);
+  
+  setQuery(event.target.value);
+  
+  };
 
-}
 
+const getRepoData = async() => {
+ await Axios.get(repoUrl) 
+.then(res => {
+console.log(res.data)
+setRepos(res.data)
 
-const HandleSubmit = (e) => {
-e.preventDefault();
-// need to write a good http request function and run it here to handle the submit. thats the next step. 
+})
 };
 
 
+const getUserData = async() => {
+await Axios.get(userUrl)
+.then(res => {
+  SetUserData(res.data)
+})
+}
+
+
+const HandleSubmit = (event) => {
+event.preventDefault();
+getUserData();
+getRepoData();
+
+}
   return (
     <AppWrapper>
-    <GlobalStyle />
-    <Headbar /> 
-
-    
-    <Form onSubmit = {HandleSubmit}>
-    <SearchInput type = "text" placeholder = "Search.. " onChange = {HandleChange} value = {query}/>
-    <input type="button" value="Search "/>
-        </Form>
-
-
-<Footer />
+     <GlobalStyle />
+     <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
+      <UserProfile profile = {userData}  /> 
+      <Repos  repos = {repos}/> 
+     <Footer />
     </AppWrapper>
   );
 }
+
 export default App;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Styles for component Below. 
 
 
 const AppWrapper = styled.div`
@@ -97,15 +80,7 @@ const AppWrapper = styled.div`
 
 
 
-const SearchInput = styled.input`
-margin:1em;
-
-`;
 
 
-const Form = styled.form`
-text-align:center;
 
-
-`;
 
