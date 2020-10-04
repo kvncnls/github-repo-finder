@@ -20,6 +20,10 @@ const RepoItem = ({repos}) => {
 
         </p>
         <p>{item.description}</p>
+        <Info>
+        <p>{item.language}</p>
+        <p>{item.stargazers_count}</p>
+        </Info>
         </Card>
     )
     )}
@@ -47,5 +51,22 @@ align-items:center;
 justify-content:center;
 flex-direction:column;
 
+
+`;
+
+const Info = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-content:flex-start;
+padding:0;
+margin:0;
+
+p{
+
+padding-left:1em;
+margin:0;
+
+}
 
 `;
