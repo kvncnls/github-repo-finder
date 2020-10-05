@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-
+import { GoOrganization, GoPerson, GoLocation} from "react-icons/go";
 
 // pass the oprops down from the app component  
 const UserProfile = ({profile}) => {
@@ -17,10 +17,10 @@ if (!profile |profile.length === 0 ) return null;
       <ProfileImage src = {profile.avatar_url}  alt = "github User profile" loading = "lazy" /> 
 
      <FollowsWrapper>
-      <FollowItem>{profile.followers} followers</FollowItem>
-      <FollowItem>{profile.following} following</FollowItem>
+      <FollowItem><GoOrganization/>{profile.followers} followers</FollowItem>
+      <FollowItem><GoPerson />{profile.following} following</FollowItem>
       </FollowsWrapper>
-        <p>{profile.location}</p>
+        <p><GoLocation /> {profile.location}</p>
         </Profile>
     )
 }
