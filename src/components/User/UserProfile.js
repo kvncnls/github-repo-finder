@@ -17,8 +17,9 @@ if (!profile |profile.length === 0 ) return null;
       <ProfileImage src = {profile.avatar_url}  alt = "github User profile" loading = "lazy" /> 
 
      <FollowsWrapper>
-      <FollowItem><GoOrganization/>{profile.followers} followers</FollowItem>
-      <FollowItem><GoPerson />{profile.following} following</FollowItem>
+      <FollowItem><GoOrganization/>  {profile.followers} followers</FollowItem>
+      <FollowItem><GoPerson />  {profile.following} following</FollowItem>
+      
       </FollowsWrapper>
       <Location>
         <GoLocation /> {profile.location}
@@ -47,6 +48,7 @@ const ProfileImage = styled.img`
   overflow: hidden;
   border-radius: 50%;
   margin-top:2em;
+  border: 0.3rem solid #081d2c;
 
 `;
 

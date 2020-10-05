@@ -41,6 +41,7 @@ const getUserData = async() => {
 await Axios.get(userUrl)
 .then(res => {
   SetUserData(res.data)
+  console.log(res.data)
 })
 }
 
@@ -54,7 +55,7 @@ getRepoData();
   return (
     <AppWrapper>
      <GlobalStyle />
-     
+
      <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
      
       <Content profile = {userData} repos = {repos} /> 
