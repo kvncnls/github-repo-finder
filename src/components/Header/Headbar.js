@@ -16,15 +16,16 @@ onscroll trigger state to display {profile.url} and profile.name in the headbar
 
 export default function Headbar({HandleSubmit, HandleChange, data}) {
     return (
-        <HeadWrapper>
+        
         <Head>
+    <HeadWrapper>
         
         <Form HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {data}/> 
    
-  
+        </HeadWrapper>
             
         </Head>
-        </HeadWrapper>
+     
     )
 }
 
@@ -33,12 +34,16 @@ const Head = styled.header`
 grid-area:header;
 width:100vw;
 block-size: min(10vh);
-background-color:red;
+
 top:0;
+
 
 `;
 
 const HeadWrapper = styled.div`
+display:flex;
+  align-items: center;
+justify-content:center
 
 `
 

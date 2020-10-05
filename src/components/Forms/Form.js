@@ -10,7 +10,7 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
 
         <SearchInput type = "text" placeholder = "Search.. " onChange ={HandleChange} value = {data}></SearchInput>
         <Icon>
-         <FiSearch  size = "1.2rem"  /> 
+         <FiSearch    /> 
          </Icon>
  
             </FormItem>
@@ -23,21 +23,21 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
 
 const SearchInput = styled.input`
   display:inline;
-
   border-top-left-radius:15px;
   border-bottom-left-radius:15px;
- border: none;
- background-color: #f5f5f0;
-
+  border: none;
+  background-color: #f5f5f0;
+ padding:2.5px;
 `;
 
 
 
 const Icon = styled.div`
-text-align:right;
+
 display:inline-block;
 font-size:1.2rem;
-
+position:relative;
+top:5px;
 
 border-top-right-radius:15px;
 border-bottom-right-radius:15px;
@@ -50,7 +50,7 @@ height:20px;
 
 
 const FormItem = styled.form`
-text-align:center;
+
 
 
 
@@ -58,7 +58,8 @@ text-align:center;
 
 
 const SearchContainer = styled.div`
-
+position:relative;
+top:10px;
 
 `;
 
@@ -66,7 +67,4 @@ const SearchContainer = styled.div`
 
 const FlexWrapper = styled.div`
 
-
-
-top:50%;
 `;

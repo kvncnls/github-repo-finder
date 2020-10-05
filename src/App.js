@@ -1,11 +1,13 @@
-import React, {   useState} from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import GlobalStyle from "./styles/GlobalStyles";
+
 import Axios from 'axios'
+
 import Headbar from "./components/Header/Headbar";
+import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
 
-import Content from "./components/Content";
 
 
 function App() {
@@ -52,6 +54,7 @@ getRepoData();
   return (
     <AppWrapper>
      <GlobalStyle />
+     
      <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
      
       <Content profile = {userData} repos = {repos} /> 
