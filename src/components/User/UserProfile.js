@@ -12,7 +12,7 @@ if (!profile |profile.length === 0 ) return null;
         <Profile>
 
       <h1>{profile.name} </h1>
-      <h2>{profile.login}</h2>
+      <p><a href = {profile.url}>{profile.login}</a></p>
 
       <ProfileImage src = {profile.avatar_url}  alt = "github User profile" loading = "lazy" /> 
 

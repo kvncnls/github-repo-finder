@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
-
+import {AiFillStar} from "react-icons/ai";
 // come back to this later. 
-
+// 
 
 const RepoItem = ({repos}) => {
    
@@ -14,15 +14,15 @@ const RepoItem = ({repos}) => {
         
         <Card key = {item.id}>
         <p>
-        <a href = {item.html_url}>
+     
           {item.name}
-        </a>
+      
 
         </p>
         <p>{item.description}</p>
         <Info>
-        <p>{item.language}</p>
-        <p>{item.stargazers_count}</p>
+        
+        <p><AiFillStar /> {item.stargazers_count}</p>
         </Info>
         </Card>
     )
