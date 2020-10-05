@@ -4,9 +4,8 @@ import GlobalStyle from "./styles/GlobalStyles";
 import Axios from 'axios'
 import Headbar from "./components/Header/Headbar";
 import Footer from "./components/Footer/Footer";
-import Repos from "./components/Repositories/Repos"
-import UserProfile from "./components/User/UserProfile";
-  
+
+import Content from "./components/Content";
 
 
 function App() {
@@ -54,8 +53,11 @@ getRepoData();
     <AppWrapper>
      <GlobalStyle />
      <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
-      <UserProfile profile = {userData}  /> 
-      <Repos  repos = {repos}/> 
+     
+      <Content profile = {userData} repos = {repos} /> 
+
+
+      
      <Footer />
     </AppWrapper>
   );
@@ -73,8 +75,9 @@ const AppWrapper = styled.div`
  display:grid;
  grid-template-areas:
  " header "
- "  main  ";
- grid-template-rows: min-content 1fr;
+ "  main  "
+ "footer";
+ grid-template-rows: min-content 1fr min-content;
 `;
 
 

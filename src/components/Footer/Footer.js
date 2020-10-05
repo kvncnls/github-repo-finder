@@ -7,19 +7,18 @@ export default function Footer() {
         <FootWrapper>
                
       
-        <footer>
+
           Built
       
          
           by Tommy Maher
-     
-      </footer>
+ 
         </FootWrapper>
     )
 }
 
 
-const FootWrapper = styled.div`
+const FootWrapper = styled.footer`
 box-shadow: 3px 4px 15px 0px rgba(0,0,0,0.44);
 box-shadow: 3px 4px 15px 0px rgba(168,156,168,1);
 display:flex;
@@ -28,4 +27,6 @@ align-items:center;
 justify-content:center;
 border-top-right-radius: 80px;
 height:10vh;
+bottom:0;
+grid-area:footer;
 `;
