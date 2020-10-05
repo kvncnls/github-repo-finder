@@ -41,6 +41,7 @@ height:20vh;
 border-radius: 25px;
   border: 1px solid grey;
 background-color:white;
+margin:1em;
 p{
  padding-left: 2em;
 

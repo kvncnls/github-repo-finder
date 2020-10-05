@@ -7,7 +7,6 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
 
      <SearchContainer>
         <FormItem onSubmit = {HandleSubmit}>
-
         <SearchInput type = "text" placeholder = "Search.. " onChange ={HandleChange} value = {data}></SearchInput>
         <Icon>
          <FiSearch    /> 

@@ -20,7 +20,9 @@ if (!profile |profile.length === 0 ) return null;
       <FollowItem><GoOrganization/>{profile.followers} followers</FollowItem>
       <FollowItem><GoPerson />{profile.following} following</FollowItem>
       </FollowsWrapper>
-        <p><GoLocation /> {profile.location}</p>
+      <Location>
+        <GoLocation /> {profile.location}
+        </Location>
         </Profile>
     )
 }
@@ -44,15 +46,20 @@ const ProfileImage = styled.img`
   height: 20vw;
   overflow: hidden;
   border-radius: 50%;
+  margin-top:2em;
 
 `;
 
 const FollowsWrapper = styled.div`
 display:flex;
-flex-direction:row;`;
+flex-direction:row;
+padding-top:2em`;
 
 const FollowItem = styled.p`
 padding:1em;
 
 
 `;
+
+const Location = styled.p`
+padding:2em;`;
