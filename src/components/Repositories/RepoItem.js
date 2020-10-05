@@ -41,7 +41,11 @@ height:20vh;
 border-radius: 25px;
   border: 1px solid grey;
 background-color:white;
-margin:1em;
+p{
+ padding-left: 2em;
+
+
+}
 
 `;
 
@@ -64,8 +68,8 @@ margin:0;
 
 p{
 
-padding-left:1em;
-margin:0;
+padding-left:3em;
+
 
 }
 

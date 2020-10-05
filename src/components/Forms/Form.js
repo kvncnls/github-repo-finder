@@ -22,7 +22,7 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
    
 
 const SearchInput = styled.input`
-  display:inline;
+
   border-top-left-radius:15px;
   border-bottom-left-radius:15px;
   border: none;
