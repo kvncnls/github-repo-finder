@@ -33,7 +33,7 @@ export default function Headbar({HandleSubmit, HandleChange, data}) {
 const Head = styled.header`
 grid-area:header;
 width:100vw;
-block-size: min(10vh);
+block-size: min(15vh);
 
 top:0;
 
@@ -45,6 +45,7 @@ display:flex;
   align-items: center;
 justify-content:center;
 padding-bottom:4em;
+padding-top:1em;
 
 `
 

@@ -1,20 +1,18 @@
 import React from 'react'
 import styled from "styled-components";
-import {  FiSearch } from "react-icons/fi";
+// import {  FiSearch } from "react-icons/fi";
 const Form = ({HandleSubmit, HandleChange, data}) => {
     return (
-      <FlexWrapper>
+      <div>
 
      <SearchContainer>
         <FormItem onSubmit = {HandleSubmit}>
         <SearchInput type = "text" placeholder = "Search.. " onChange ={HandleChange} value = {data}></SearchInput>
-        <Icon>
-         <FiSearch    /> 
-         </Icon>
+
  
             </FormItem>
        </SearchContainer>
-       </FlexWrapper>
+       </div>
     )
     }
     export default Form
@@ -22,29 +20,24 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
 
 const SearchInput = styled.input`
 
-  border-top-left-radius:15px;
-  border-bottom-left-radius:15px;
+width: 100%;
+  height: 2.8rem;
+  background: red;
+  outline: none;
   border: none;
-  background-color: #f5f5f0;
- padding:2.5px;
- height: 25px;
-`;
-
-
-
-const Icon = styled.div`
-
-display:inline-block;
-font-size:1.2rem;
-position:relative;
-top:5px;
-
-border-top-right-radius:15px;
-border-bottom-right-radius:15px;
-background-color: #f5f5f0;
-height:20px;
+  border-radius: 1.625rem;
+  font-family: Calibre;
+    font-weight: 400;
+background: linear-gradient(315deg, #d9dee1, #ffffff);
+box-shadow:  -5px -5px 5px #c8cdd0, 
+             5px 5px 5px #ffffff;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+  background-color:#f1f7fa
 
 `;
+
+
 
 
 
@@ -58,13 +51,12 @@ const FormItem = styled.form`
 
 
 const SearchContainer = styled.div`
-position:relative;
-top:10px;
+display:flex;
+justify-content:center;
+align-content:center;
 
 `;
 
 
 
-const FlexWrapper = styled.div`
 
-`;
