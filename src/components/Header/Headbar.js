@@ -43,7 +43,8 @@ top:0;
 const HeadWrapper = styled.div`
 display:flex;
   align-items: center;
-justify-content:center
+justify-content:center;
+padding-bottom:4em;
 
 `
 
