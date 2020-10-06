@@ -33,4 +33,5 @@ margin-top:2em;
 font-family: "SF Mono";
     font-weight: 400;
     font-size:18px;
+    color:#777763;
 `;

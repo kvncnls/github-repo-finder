@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { GoOrganization, GoPerson, GoLocation} from "react-icons/go";
-import theme from '../../styles/theme';
+//import theme from '../../styles/theme';
 // pass the oprops down from the app component  
 const UserProfile = ({profile}) => {
 
@@ -44,7 +44,7 @@ flex-direction:column;
 h1 {
   font-family: Calibre;
     font-weight: 600;
-  color:${theme.colors.slate};
+  color:#777763;
   font-size:3em;
 
 }
