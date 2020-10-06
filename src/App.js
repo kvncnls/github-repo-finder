@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import GlobalStyle from "./styles/GlobalStyles";
-
+import GlobalFonts from "./styles/Fonts/Fonts";
 import Axios from 'axios'
 
 import Headbar from "./components/Header/Headbar";
@@ -55,6 +55,7 @@ getRepoData();
   return (
     <AppWrapper>
      <GlobalStyle />
+     <GlobalFonts />
 
      <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
      
