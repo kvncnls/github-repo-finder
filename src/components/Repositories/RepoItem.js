@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import {AiFillStar} from "react-icons/ai";
-// come back to this later. 
+import theme from '../../styles/theme';
 // 
 
 const RepoItem = ({repos}) => {
@@ -13,16 +13,12 @@ const RepoItem = ({repos}) => {
 
         
         <Card key = {item.id}>
-        <p>
-     
-          {item.name}
-      
+        <h4><a href = {item.html_url}> {item.name}</a> </h4>
 
-        </p>
         <p>{item.description}</p>
         <Info>
         
-        <p><AiFillStar /> {item.stargazers_count}</p>
+        <p><AiFillStar color = "777763" /> {item.stargazers_count}</p>
         </Info>
         </Card>
     )
@@ -37,17 +33,30 @@ export default RepoItem
 
 const Card = styled.div`
 width:80vw;
-height:20vh;
-border-radius: 25px;
-  border: 1px solid grey;
-background-color:white;
+height:150px;
+border-radius: 38px;
+background: #f1f7fa;
+box-shadow:  8px -8px 16px #d2d7da, 
+             -8px 8px 16px #ffffff;
 margin:1em;
+
 p{
  padding-left: 2em;
-
+ font-family: Calibre;
+    font-weight: 400;
+    color:${theme.colors.slate};
+    font-size: 20px;
+    padding-top:.5em;
 
 }
-
+h4{
+  font-family: Calibre;
+    font-size: 20px;
+    font-weight: 600;
+    color:${theme.colors.slate};
+   padding-left:1em;
+   padding-top:.5em;
+}
 `;
 
 const RepoWrapper = styled.div`
