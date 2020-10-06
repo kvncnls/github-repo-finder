@@ -57,6 +57,13 @@ h4{
    padding-left:1em;
    padding-top:.5em;
 }
+
+a:hover{
+
+color: #777763;
+
+
+}
 `;
 
 const RepoWrapper = styled.div`
