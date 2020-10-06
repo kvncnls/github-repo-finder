@@ -21,10 +21,9 @@ margin: 0;
 padding: 0;
 }
 
-a { text-decoration: none;  }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:hover, a:active { text-decoration: none; }
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
  `
 export default GlobalStyle;
