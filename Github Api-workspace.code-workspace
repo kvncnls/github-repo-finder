@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": ".."
+		},
+		{
+			"path": "..\\..\\Website3\\website\\src\\fonts\\Calibre"
+		},
+		{
+			"path": "..\\..\\Website3\\website\\src\\fonts\\SFMono"
 		}
 	]
 }
