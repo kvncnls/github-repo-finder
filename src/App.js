@@ -8,6 +8,7 @@ import Headbar from "./components/Header/Headbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
 
+// error handling and a loading spinner? 
 
 
 function App() {

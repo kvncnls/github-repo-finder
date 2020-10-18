@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { GoOrganization, GoPerson, GoLocation} from "react-icons/go";
+import Landing from "../Landing";
 //import theme from '../../styles/theme';
 // pass the oprops down from the app component  
 const UserProfile = ({profile}) => {
@@ -9,7 +10,9 @@ const UserProfile = ({profile}) => {
 
 
 
-if (!profile |profile.length === 0 ) return null;
+if (!profile |profile.length === 0 ) return <div>
+<Landing /> 
+</div>;
 
     return (
         <Profile>
@@ -18,6 +21,7 @@ if (!profile |profile.length === 0 ) return null;
       <p><a href = {profile.url}> {profile.login}</a></p>
 
       <ProfileImage src = {profile.avatar_url}  alt = "github User profile" loading = "lazy" /> 
+
       <IconWrap>
      <FollowsWrapper>
       <FollowItem><GoOrganization color = "777763"/>  {profile.followers} followers</FollowItem>
@@ -76,14 +80,16 @@ const ProfileImage = styled.img`
 
  width: 100%;
   max-width: 350px;
-  height: auto;
-  overflow: hidden;
 
+  overflow: hidden;
+position:relative;
+left:20px;
   border-radius: 50%;
 
   ;
 
 `;
+
 
 const FollowsWrapper = styled.div`
 display:flex;
