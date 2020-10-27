@@ -1,4 +1,4 @@
-
+// removed overflow hidden has it was causing a bug potentially. No clue why it was there in the first place. 
 import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
@@ -8,7 +8,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background-color:#f1f7fa;
- 
+
 
 }
 *, *:before, *:after {
