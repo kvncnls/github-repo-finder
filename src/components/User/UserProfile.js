@@ -9,10 +9,12 @@ const UserProfile = ({profile}) => {
   
 
 
+  if (profile.length === 0) {
+    return (<Landing />);
+  }
 
-if (!profile |profile.length === 0 ) return <div>
-<Landing /> 
-</div>;
+
+ 
 
     return (
         <Profile>
@@ -36,6 +38,7 @@ if (!profile |profile.length === 0 ) return <div>
         </Profile>
     )
 }
+
 export default UserProfile
 
 
