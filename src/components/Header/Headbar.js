@@ -14,13 +14,13 @@ onscroll trigger state to display {profile.url} and profile.name in the headbar
 
 
 
-export default function Headbar({HandleSubmit, HandleChange, data}) {
+export default function Headbar({HandleSubmit, HandleChange, data , alert}) {
     return (
         
         <Head>
     <HeadWrapper>
         
-        <Form HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {data}/> 
+        <Form HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {data}  alert = {alert}/> 
    
         </HeadWrapper>
             

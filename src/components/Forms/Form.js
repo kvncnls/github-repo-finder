@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
-// import {  FiSearch } from "react-icons/fi";
-const Form = ({HandleSubmit, HandleChange, data}) => {
+import Alert from "../Alert";
+
+const Form = ({HandleSubmit, HandleChange, data, alert}) => {
     return (
       <div>
 
@@ -11,7 +12,9 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
 
  
             </FormItem>
+           
        </SearchContainer>
+       {alert !== "" &&<Alert alert = {alert} />}
        </div>
     )
     }
@@ -19,10 +22,10 @@ const Form = ({HandleSubmit, HandleChange, data}) => {
    
 
 const SearchInput = styled.input`
-
+ 
 width: 100%;
   height: 2.8rem;
-  background: red;
+ 
   outline: none;
   border: none;
   border-radius: 1.625rem;

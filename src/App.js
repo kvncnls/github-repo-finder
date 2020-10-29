@@ -8,7 +8,10 @@ import Headbar from "./components/Header/Headbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
 
-// error handling and a loading spinner? 
+// error handling for the query. conditional rendering within the axios req. 
+// Error handling current situation. 
+// Conditional rendering is done, now need to make the alert component, and pass it to the form and 
+// do all that stuff. Will get to that tomorrow. 
 
 
 function App() {
@@ -16,6 +19,7 @@ function App() {
   const [userData, SetUserData] = useState([]);
   const [repos, setRepos] = useState([]);
   const [query, setQuery] = useState("");
+  const [alert, setAlert] = useState("");
 
 const userUrl = `https://api.github.com/users/${query}`;
 const repoUrl = `https://api.github.com/users/${query}/repos`;
@@ -29,22 +33,44 @@ const HandleChange = (event) => {
 
 
 const getRepoData = async() => {
- await Axios.get(repoUrl) 
-.then(res => {
-console.log(res.data)
-setRepos(res.data)
+ 
+    const res = await Axios.get(repoUrl)
+   
+     setRepos(res.data)
+   console.log(res.data)
+   setAlert("")
+   setQuery("");
+   }
+  
+   
 
-})
-};
+
 
 
 const getUserData = async() => {
-await Axios.get(userUrl)
-.then(res => {
-  SetUserData(res.data)
-  console.log(res.data)
-})
+if (query !== ""){
+
+ const res = await Axios.get(userUrl)
+
+  if (!res.data){
+    return setAlert("No such user available")
+  }
+SetUserData(res.data)
+console.log(res.data)
+setAlert("")
+setQuery("");
+} 
+else{
+ return setAlert("Please Fill the form")
 }
+
+
+}
+
+
+
+
+
 
 
 const HandleSubmit = (event) => {
@@ -57,8 +83,8 @@ getRepoData();
     <AppWrapper>
      <GlobalStyle />
      <GlobalFonts />
-
-     <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query} /> 
+  
+     <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query}  alert = {alert} /> 
      
       <Content profile = {userData} repos = {repos} /> 
 
@@ -67,7 +93,7 @@ getRepoData();
      <Footer />
     </AppWrapper>
   );
-}
+  }
 
 export default App;
 
