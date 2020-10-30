@@ -16,6 +16,7 @@ const Alert1 = styled.div`
 h3{
  text-align:center;
     color:green;
+    margin:1em;
 }
 
 `; 
