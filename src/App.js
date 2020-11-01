@@ -8,10 +8,8 @@ import Headbar from "./components/Header/Headbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
 
-// error handling for the query. conditional rendering within the axios req. 
-// Error handling current situation. 
-// Conditional rendering is done, now need to make the alert component, and pass it to the form and 
-// do all that stuff. Will get to that tomorrow. 
+// conditionally render the loading prop as the request is in progress. 
+// how to achieve this?
 
 
 function App() {
@@ -20,6 +18,7 @@ function App() {
   const [repos, setRepos] = useState([]);
   const [query, setQuery] = useState("");
   const [alert, setAlert] = useState("");
+  const [loading, setLoading] = useState(false);
 
 const userUrl = `https://api.github.com/users/${query}`;
 const repoUrl = `https://api.github.com/users/${query}/repos`;
@@ -34,12 +33,13 @@ const HandleChange = (event) => {
 
 const getRepoData = async() => {
  
-    const res = await Axios.get(repoUrl)
+      const res = await Axios.get(repoUrl)
    
      setRepos(res.data)
-   console.log(res.data)
-   setAlert("")
-   setQuery("");
+     console.log(res.data)
+     setAlert("")
+     setQuery("");
+     setLoading(true)
    }
   
    
@@ -57,7 +57,7 @@ if (query !== ""){
   }
 SetUserData(res.data)
 console.log(res.data)
-setAlert("")
+
 setQuery("");
 } 
 else{
@@ -66,11 +66,6 @@ else{
 
 
 }
-
-
-
-
-
 
 
 const HandleSubmit = (event) => {
@@ -86,8 +81,8 @@ getRepoData();
   
      <Headbar HandleSubmit ={HandleSubmit} HandleChange = {HandleChange} data = {query}  alert = {alert} /> 
      
-      <Content profile = {userData} repos = {repos} /> 
-
+      <Content profile = {userData} repos = {repos} loading = {loading} /> 
+      
 
       
      <Footer />

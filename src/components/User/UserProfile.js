@@ -2,9 +2,10 @@ import React from 'react'
 import styled from "styled-components";
 import { GoOrganization, GoPerson, GoLocation} from "react-icons/go";
 import Landing from "../Landing";
+import {BeatLoader} from 'react-spinners';
 //import theme from '../../styles/theme';
 // pass the oprops down from the app component  
-const UserProfile = ({profile}) => {
+const UserProfile = ({profile, loading}) => {
 
   
 
@@ -13,7 +14,9 @@ const UserProfile = ({profile}) => {
     return (<Landing />);
   }
 
-
+  if (loading === true){
+    return(<BeatLoader/>)
+  }
  
 
     return (
