@@ -6,18 +6,11 @@ import { FaGithubSquare, FaLinkedin,FaTwitterSquare } from 'react-icons/fa';
 export default function Footer() {
     return (
         <FootWrapper>
-               
-      
-
-          Built
-      
-         
-          by Tommy Maher
-          <SocialList> 
-        <SocialListItem><a href = "https://github.com/tommymaher15"><FaGithubSquare /></a></SocialListItem>
-        <SocialListItem><a href ="https://www.linkedin.com/in/tommymaher10/"><FaLinkedin /></a></SocialListItem>
-        <SocialListItem><a href = "https://twitter.com/TommyMa88163906"><FaTwitterSquare /></a></SocialListItem>
-       
+          Built by Tommy 'The GOAT' Maher
+        <SocialList>
+          <SocialListItem><a href = "https://github.com/tommymaher15"><FaGithubSquare /></a></SocialListItem>
+          <SocialListItem><a href ="https://www.linkedin.com/in/tommymaher10/"><FaLinkedin /></a></SocialListItem>
+          <SocialListItem><a href = "https://twitter.com/TommyMa88163906"><FaTwitterSquare /></a></SocialListItem>
         </SocialList>
         </FootWrapper>
     )
@@ -26,7 +19,7 @@ export default function Footer() {
 
 const FootWrapper = styled.footer`
 background: linear-gradient(225deg, #d9dee1, #ffffff);
-box-shadow:  -5px 5px 5px #e5ebee, 
+box-shadow:  -5px 5px 5px #e5ebee,
              5px -5px 5px #fdffff;
 display:flex;
 background-color:#f1f7fa;
@@ -60,6 +53,6 @@ padding-left:1em;
 color:#777763;
 &:hover{
   color:${theme.colors.green};
- 
+
 };
 `
